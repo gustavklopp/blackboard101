@@ -3,19 +3,10 @@
 # wobine code for world bitcoin network blackboard 101
 # Educational Purposes only
 # Python 2.7.6 and relies on bitcoind & bitcoinrpc & wobine's github connection file
-# We had to change the bitcoinrpc 'connection.py' file to add multisig support
-# you'll need to download our 'connection.py' file from Github & stuff it in your bitcoinrpc folder
 
-from bitcoinrpc.util import *
-from bitcoinrpc.exceptions import *
-from bitcoinrpc.__init__ import *
-from bitcoinrpc.config import *
-from bitcoinrpc.proxy import *
-from bitcoinrpc.data import *
-from bitcoinrpc.connection import *
-
-
-bitcoin = connect_to_local() #creates an object called 'bitcoin' that allows for bitcoind calls
+from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+# rpc_user and rpc_password are set in the bitcoin.conf file
+bitcoin = AuthServiceProxy("http://%s:%s@127.0.0.1:8332"%(rpc_user, rpc_password))
 
 # YOU NEED AT LEAST TWO OF THE PRIVATE KEYS FROM PART ONE linked to your MULTI-SIG ADDRESS
 multisigprivkeyone = "L2M1uRgdwgCotoP8prWJYYwz2zwWgsMa9TJwqARG7nFxkpdvBSsm" #your key/brother one
