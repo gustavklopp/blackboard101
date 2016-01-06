@@ -1,7 +1,7 @@
 # MULTISIGS - PART ONE - GENERATING A MULTISIG ADDRESS & REDEEM SCRIPT
 # wobine code for world bitcoin network blackboard 101
 # Educational Purposes only
-# Python 2.7.6 and relies on bitcoind & bitcoinrpc & wobine's github connection file
+# Python 2.7.6 and relies on bitcoind & bitcoinrpc from https://github.com/jgarzik/python-bitcoinrpc
 
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 # rpc_user and rpc_password are set in the bitcoin.conf file
